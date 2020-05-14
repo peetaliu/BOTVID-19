@@ -20,16 +20,30 @@ client.once('ready', () => {
 })
 
 client.on('message', msg => {
-  const args = msg.content.slice(prefix.length).split(/ +/)
-  const command = args.shift().toLowerCase()
+  if (!msg.member.user.bot) {
+    const args = msg.content.slice(prefix.length).split(/ +/)
+    let command = args.shift().toLowerCase()
+    if (
+      client.user.id === '708400631441784843' &&
+      !client.commands.has(command)
+    ) {
+      command = 'camel'
+      try {
+        client.commands.get(command).execute(msg, args)
+        return
+      } catch (err) {
+        console.log(err)
+      }
+    }
 
-  if (!client.commands.has(command)) return
+    if (!client.commands.has(command)) return
 
-  try {
-    client.commands.get(command).execute(msg, args)
-  } catch (err) {
-    console.error(err)
-    msg.reply('Error with command')
+    try {
+      client.commands.get(command).execute(msg, args)
+    } catch (err) {
+      console.error(err)
+      msg.reply('Error with command')
+    }
   }
 })
 
