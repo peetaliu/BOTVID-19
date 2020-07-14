@@ -8,7 +8,7 @@ module.exports = {
       const cases = req.data[req.data.length - 1]
       const fDate = new Date(cases.Date).toDateString()
       msg.channel.send(
-        `Covid-19 cases in ${cases.Country} as of ${fDate}: \nConfirmed: ${cases.Confirmed}\nDeaths: ${cases.Deaths}\nRecovered: ${cases.Recovered}\nActive: ${cases.Active}`
+        `COVID-19 cases in ${cases.Country} as of ${fDate}: \nConfirmed: ${cases.Confirmed}\nDeaths: ${cases.Deaths}\nRecovered: ${cases.Recovered}\nActive: ${cases.Active}`
       )
     })
   },
