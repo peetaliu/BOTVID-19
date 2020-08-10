@@ -13,7 +13,7 @@ _**Commands:**_
 !update - **IN PROGRESS**  
   Displays current global case numbers and their variances from the day before
   
-!news - **IN PROGRESS**
+!news - **IN PROGRESS**  
   Displays covid news from WHO's RSS feed
 
 !trajectory <country> - **IN PROGRESS**  
